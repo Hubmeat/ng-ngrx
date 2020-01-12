@@ -1,0 +1,19 @@
+<h1>
+  Ngrx 待办列表: 
+</h1>
+<input placeholder="输入待办事项" [(ngModel)]="todo"  />
+<!-- 添加待办 -->
+<button  *ngIf="!editing" (click)="addTodo(todo)" [disabled]="!todo">添加待办</button>
+<!-- 编辑 -->
+<button (click)="updateTodo(todo)" *ngIf="editing">编辑</button>
+<button (click)="cancelEdit()" *ngIf="editing">取消</button>
+
+<ul class="todo_container">
+  <li class="todo_item" *ngFor="let todo of todos$ | async; let index = index;">
+    <span class="todo_index">{{ index }}</span>
+    <span [class.complete]="todo.complete">{{ todo.value }}</span>
+    <button (click)="editTodo(todo, index)"> 编辑 </button>
+    <button (click)="toggleTodo(todo, index)"> 舍弃/待办 </button>
+    <button (click)="deleteTodo(index)"> 删除 </button>
+  </li>
+</ul>
