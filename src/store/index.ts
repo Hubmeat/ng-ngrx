@@ -10,8 +10,6 @@ export interface AppState {
 }
 
 export const STORE_KEY = {
-    TIMELINE: 'timeline',
-    TIMEZONE: 'timezone',
     TODO_STATE: 'todoState'
 };
 
