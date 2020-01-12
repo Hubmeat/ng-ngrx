@@ -4,7 +4,6 @@
 import { default as todoReducer, TodoState } from './reducers/todo.reducer';
 import { ActionReducerMap } from '@ngrx/store';
 
-
 export interface AppState {
     'todoState': TodoState
 }
